@@ -37,6 +37,7 @@ Cette application utilise l'API d'**OpenFoodFacts** pour récupérer des informa
 Avant d'exécuter le projet, assurez-vous d'avoir installé les éléments suivants :
 
 - Python **3.7+**
+- (Optionnel) Scanneur de Code Barres
 ---
 
 ## Instructions d'exécution
