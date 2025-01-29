@@ -1,6 +1,16 @@
 import tkinter as tk
 import json
 import requests
+import subprocess
+import sys
+
+required_packages = ["requests","tkinter"]
+for package in required_packages:
+    try:
+        __import__(package)  # Tente d'importer le module
+    except ImportError:  # Si le package n'est pas installé
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
 
 root = tk.Tk()
 root.title("Scanner de Code-Barres")
