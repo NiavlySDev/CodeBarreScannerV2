@@ -144,6 +144,16 @@ def open_all_articles_window():
                 label.pack(anchor="w", padx=10)
 
                 def cleanup_and_close():
+                    image_folder = "images"
+                    if os.path.exists(image_folder):
+                        for file_name in os.listdir(image_folder):
+                            file_path = os.path.join(image_folder, file_name)
+                            if os.path.isfile(file_path):
+                                try:
+                                    os.remove(file_path)
+                                except OSError as e:
+                                    print(f"Erreur lors de la suppression de l'image {file_path} : {e}")
+                    os.rmdir(image_folder)
                     articles_window.destroy()
 
                 articles_window.protocol("WM_DELETE_WINDOW", cleanup_and_close)
