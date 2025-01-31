@@ -113,14 +113,14 @@ Si l'API retourne une erreur ou si le produit est manquant, une entrée manuelle
 Pour créer un fichier `.exe` exécutable pour Windows, utilisez la commande suivante avec **PyInstaller** :
 
 ```bash
-pyinstaller --onefile --noconsole --noconfirm --add-data="output.json;." scanner.py
+pyinstaller --onefile --noconsole --add-data "bdd.py;." --add-data "Params.py;." scanner.py
 ```
 
 ### Pour Linux :
 Pour créer un fichier exécutable Linux, utilisez cette commande sous Linux :
 
 ```bash
-pyinstaller --onefile --noconfirm --noconsole --add-data="output.json:." scanner.py
+pyinstaller --onefile --noconsole --add-data "bdd.py;." --add-data "Params.py;." scanner.py
 ```
 
 Le fichier exécutable généré sera situé dans le dossier `/dist`.
