@@ -60,6 +60,10 @@ Si vous voulez utiliser une base de données:
 Remove-Item -Recurse -Force .venv
 python -m venv .venv
 .venv\Scripts\activate
+pip install requests
+pip install pillow
+pip install mysql
+pip install mysql-connector-python
 pyinstaller --onefile --noconsole --add-data "bdd.py;." --add-data "Params.py;." scanner.py
 python scanner.py
 ```
