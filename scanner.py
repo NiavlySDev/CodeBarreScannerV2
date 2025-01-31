@@ -6,7 +6,7 @@ import sys
 from PIL import Image, ImageTk
 from bdd import *
 
-required_packages = ["requests","tkinter","mysql.connector","mysql", "pillow"]
+required_packages = ["requests","tkinter","mysql-connector-python","mysql", "pillow"]
 for package in required_packages:
     try:
         __import__(package)  # Tente d'importer le module

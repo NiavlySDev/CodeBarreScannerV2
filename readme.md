@@ -50,6 +50,19 @@ Avant d'exécuter le projet, assurez-vous d'avoir installé les éléments suiva
 python scanner.py
 ```
 
+Si vous voulez utiliser une base de données:
+1. Importez le projet dans pycharm
+2. Changer la valeur BDD dans Params.py a True
+3. Mettez vos identifiants
+4. Puis faites ces commandes dans le powershell de pycharm
+
+```bash
+Remove-Item -Recurse -Force .venv
+python -m venv .venv
+.venv\Scripts\activate
+pyinstaller --onefile --noconsole --add-data "bdd.py;." --add-data "Params.py;." scanner.py
+python scanner.py
+```
 ---
 
 ## Guide des commandes et raccourcis

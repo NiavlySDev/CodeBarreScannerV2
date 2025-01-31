@@ -1,7 +1,7 @@
-HOST = "192.168.1.21"
+HOST = "<ip>"
 PORT = 3306
-USER = "NiavlyS"
-PASSWORD = "goosebumpC2020"
-DATABASE = "codeBarres"
+USER = "<user>"
+PASSWORD = "<password>"
+DATABASE = "<table>"
 
-BDD=False
+BDD=True
