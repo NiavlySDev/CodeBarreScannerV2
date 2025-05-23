@@ -1,10 +1,18 @@
 {
-    "8003340801346": {
-        "marque": "Lindt, Lindor",
-        "nom": "Lindor blanc",
+    "8711299100266": {
+        "marque": "Snacks of The World",
+        "nom": "Cashew Nuts Unsalted",
+        "type": "food",
+        "quantite": "500 g",
+        "image": "https://images.openfoodfacts.org/images/products/871/129/910/0266/front_fr.3.400.jpg",
+        "nb": 0
+    },
+    "7622201460495": {
+        "marque": "Mondelez",
+        "nom": "Unknown",
         "type": "food",
         "quantite": "0 unit",
-        "image": "https://images.openfoodfacts.org/images/products/800/334/080/1346/front_fr.3.400.jpg",
-        "nombre": 11
+        "image": "https://images.openfoodfacts.org/images/products/762/220/146/0495/front_it.3.400.jpg",
+        "nb": 3
     }
 }

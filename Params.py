@@ -4,4 +4,4 @@ USER = "<user>"
 PASSWORD = "<password>"
 DATABASE = "<table>"
 
-BDD=True
+BDD=False
