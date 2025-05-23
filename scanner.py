@@ -101,22 +101,22 @@ def adjust_font_size_and_window(scale_factor, window):
     window.geometry(f"{new_width}x{new_height}")
 
 
-def adjust_with_mouse(event):
+def adjust_with_mouse(event, window):
     """
     Ajuste la taille en fonction de la direction de la molette avec la touche Ctrl.
     Molette vers le haut : augmente la taille.
     Molette vers le bas : réduit la taille.
     """
     if event.delta > 0:  # Molette vers le haut
-        increase_font_size()
+        increase_font_size(window)
     else:  # Molette vers le bas
-        decrease_font_size()
+        decrease_font_size(window)
 
-def increase_font_size():
-    adjust_font_size_and_window(1.2)  # Augmenter de 20%
+def increase_font_size(window):
+    adjust_font_size_and_window(1.2,window)  # Augmenter de 20%
 
-def decrease_font_size():
-    adjust_font_size_and_window(0.8)  # Réduire de 20%
+def decrease_font_size(window):
+    adjust_font_size_and_window(0.8,window)  # Réduire de 20%
 
 def open_all_articles_window():
     data = load_existing_data()
@@ -666,10 +666,10 @@ ok_button = tk.Button(root, text="Entrée Manuelle", command=open_manual_entry_w
                       bg="#d35400", fg="#ecf0f1")
 ok_button.pack_forget()
 
-tk.Button(root, text="Agrandir Texte", command=increase_font_size, font=("Helvetica", font_size_base),
+tk.Button(root, text="Agrandir Texte", command=lambda event: increase_font_size(root), font=("Helvetica", font_size_base),
           bg="#16a085", fg="#ecf0f1").pack(pady=5)
 
-tk.Button(root, text="Réduire Texte", command=decrease_font_size, font=("Helvetica", font_size_base),
+tk.Button(root, text="Réduire Texte", command=lambda event: decrease_font_size(root), font=("Helvetica", font_size_base),
           bg="#c0392b", fg="#ecf0f1").pack(pady=5)
 
 
@@ -687,7 +687,7 @@ root.bind("h", lambda event: open_help_window())
 root.bind("<Control-Key-=>", lambda event: increase_font_size())  # Ctrl + +
 root.bind("<Control-Key-minus>", lambda event: decrease_font_size())  # Ctrl + -
 
-root.bind("<Control-MouseWheel>", lambda event: adjust_with_mouse(event))
+root.bind("<Control-MouseWheel>", lambda event: adjust_with_mouse(event, root))
 
 label_output = tk.Label(root, text="", font=("Helvetica", 10), bg="#2c3e50", fg="#ecf0f1")
 label_output.pack(pady=10, fill="x", padx=20, ipadx=10, ipady=10)
